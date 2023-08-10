@@ -1,0 +1,6 @@
+Hello world.
+
+This is a message sent with a python mail script.
+
+Kind regards.
+HK-UH23awge2-UB
