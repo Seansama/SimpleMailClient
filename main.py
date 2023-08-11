@@ -4,13 +4,13 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 
-server = smtplib.SMTP('smtp.gmail.com', 25)
+server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 server.ehlo()
-server.starttls()
+# server.starttls()
 with open('text.txt', 'r') as f:
     password = f.read()
 
-server.login('geniverpulnisic@gmail.com', password)
+server.login('eobardtesting@gmail.com', password)
 
 msg = MIMEMultipart()
 msg['From'] = 'Geniver'
@@ -33,5 +33,4 @@ p.add_header('Content-Disposition', f'attachment; filename={filename}')
 msg.attach(p)
 
 text = msg.as_string()
-server.sendmail('geniverpulnisic@gmail.com', 'shawnramito@gmail.com', text)
-server.quit()
+server.sendmail('eobardtesting@gmail.com', 'shawnramito@gmail.com', text)
